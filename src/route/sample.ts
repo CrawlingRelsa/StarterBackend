@@ -1,11 +1,12 @@
-import {Router} from 'express'
+import { Router } from "express";
+import Home from "../model/home";
 
-const router = Router()
+const router = Router();
 
-router.get('/', (req, res) => {
-    res.json({
-        resp: 'ok'
-    })
-})
+router.get("/", (req, res) => {
+  res.json({
+    resp: new Home().foo("ok")
+  });
+});
 
-export default router
+export default router;
